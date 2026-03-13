@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>林溪 | 研究生个人主页</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 全局变量：淡雅莫兰迪色系 */
+        :root {
+            --bg: #f8f5f2;       /* 米白背景 */
+            --text: #4a4a4a;      /* 深灰文本 */
+            --accent: #8fb3a6;    /* 淡青主色（学术感） */
+            --subtle: #d9c6b5;    /* 浅咖辅助色 */
+            --light: #f0ebe6;     /* 浅灰底纹 */
+            --shadow: 0 4px 12px rgba(0,0,0,0.03);
+            --radius: 8px;        /* 圆角 */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 头部：姓名与身份 */
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--subtle);
+        }
+
+        .name {
+            font-size: 2.8rem;
+            font-weight: 300; /* 细体显雅致 */
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        /* 通用区块样式 */
+        section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-3px); /* 微悬停效果 */
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--light);
+            font-weight: 500;
+        }
+
+        /* 简介与教育背景 */
+        .bio p {
+            margin-bottom: 1rem;
+            text-indent: 2em; /* 首行缩进 */
+        }
+
+        .education ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .education li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .education li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        /* 研究兴趣：图标+短文案 */
+        .interests {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-item {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .interest-item i {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        /* 成果展示：卡片式列表 */
+        .publications ul, .projects ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .publications li, .projects li {
+            margin-bottom: 1.2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed var(--light);
+        }
+
+        .publications li:last-child, .projects li:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .pub-authors, .project-desc {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* 联系方式：图标链接 */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            color: var(--text);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        /* 页脚：格言 */
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 2rem 0;
+            color: var(--text);
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 600px) {
+            .name { font-size: 2.2rem; }
+            .interests { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部：姓名与身份 -->
+    <header>
+        <h1 class="name">林溪</h1>
+        <p class="title">计算机科学硕士 | 人工智能与认知计算方向</p>
+    </header>
+
+    <!-- 个人简介 -->
+    <section class="bio">
+        <h2>关于我</h2>
+        <p>热爱探索智能系统的边界，专注于机器学习与人类认知的交叉研究。相信技术的温度在于理解人、服务人，在数据与算法中寻找人文关怀的平衡点。</p>
+        <p>现就读于XX大学计算机学院，师从XXX教授，参与国家自然科学基金重点项目“面向复杂场景的认知计算模型研究”。</p>
+    </section>
+
+    <!-- 教育背景 -->
+    <section class="education">
+        <h2>教育经历</h2>
+        <ul>
+            <li><strong>XX大学</strong> | 计算机科学与技术 | 硕士（2022-至今）<br>研究方向：认知计算、多模态学习</li>
+            <li><strong>XX师范大学</strong> | 应用心理学 | 学士（2018-2022）<br>辅修：数据科学与大数据技术</li>
+        </ul>
+    </section>
+
+    <!-- 研究兴趣 -->
+    <section class="interests">
+        <h2>研究兴趣</h2>
+        <div class="interest-item">
+            <i class="fas fa-brain"></i>
+            <p>认知建模与类脑计算</p>
+        </div>
+        <div class="interest-item">
+            <i class="fas fa-eye"></i>
+            <p>多模态感知与理解</p>
+        </div>
+        <div class="interest-item">
+            <i class="fas fa-hands-helping"></i>
+            <p>人机协同智能系统</p>
+        </div>
+        <div class="interest-item">
+            <i class="fas fa-seedling"></i>
+            <p>可解释AI与伦理</p>
+        </div>
+    </section>
+
+    <!-- 学术成果 -->
+    <section class="publications">
+        <h2>代表性成果</h2>
+        <ul>
+            <li>
+                <div class="pub-title">《基于认知启发的多模态情感识别模型》</div>
+                <div class="pub-authors">林溪, XXX, XXX. 计算机学报, 2024.</div>
+            </li>
+            <li>
+                <div class="pub-title">Cognitive-inspired Multimodal Fusion for Human-AI Interaction</div>
+                <div class="pub-authors">Lin Xi, et al. AAAI 2023 (CCF-A)</div>
+            </li>
+            <li>
+                <div class="pub-title">面向特殊教育的智能辅助系统设计</div>
+                <div class="pub-authors">林溪（第一作者）, 发明专利 ZL202310XXXXXX.X</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 项目经历 -->
+    <section class="projects">
+        <h2>研究项目</h2>
+        <ul>
+            <li>
+                <div class="project-desc"><strong>国家重点研发计划</strong>：复杂场景下认知计算模型构建（2023-2025）<br>负责多模态数据融合模块设计与实验验证</div>
+            </li>
+            <li>
+                <div class="project-desc"><strong>校企合作项目</strong>：智能教育机器人情感交互系统（2022-2023）<br>主导用户研究与交互逻辑设计，落地3所试点学校</div>
+            </li>
+        </ul>
+    </section>
+
+    <!-- 联系方式 -->
+    <section class="contact">
+        <h2>联系我</h2>
+        <div class="contact-links">
+            <a href="mailto:linxi@university.edu" class="contact-link" title="邮箱">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://github.com/linxi-research" target="_blank" class="contact-link" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" class="contact-link" title="Google Scholar">
+                <i class="fas fa-graduation-cap"></i>
+            </a>
+            <a href="https://www.researchgate.net/profile/Lin-Xi" target="_blank" class="contact-link" title="ResearchGate">
+                <i class="fab fa-researchgate"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚：个人格言 -->
+    <footer>
+        <p>“技术应如溪流，润物无声地汇入人类认知的长河。”</p>
+    </footer>
+</body>
+</html>
